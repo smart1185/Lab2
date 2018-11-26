@@ -1,0 +1,264 @@
+﻿<Window x:Class="Module04.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Module04"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="381" Width="525">
+    <Window.Resources>
+        <Style x:Key="PullQuote">
+            <Setter Property="Paragraph.FontSize" Value="24"></Setter>
+            <Setter Property="Paragraph.FontStyle" Value="Italic"></Setter>
+            <Setter Property="Paragraph.Foreground" Value="Green"></Setter>
+            <Setter Property="Paragraph.Padding" Value="5"></Setter>
+            <Setter Property="Paragraph.Margin" Value="5,10,15,10"></Setter>
+
+        </Style>
+    </Window.Resources>
+
+    <TabControl>
+        <TabItem Header="Paragraph">
+            <FlowDocumentScrollViewer IsSelectionEnabled="False">
+                <FlowDocument>
+                    <Paragraph Name="FirstParagraf">
+                        <Run>
+                            Герцен родился в семье богатого помещика Ивана Алексеевича Яковлева (1767—1846), происходившего от Андрея Кобылы (как и Романовы).
+                        </Run>
+                    </Paragraph>
+                    <Paragraph Name="SecondParagraf">Мать — 16-летняя немка Генриетта-Вильгельмина-Луиза Гааг (нем. Henriette Wilhelmina Luisa Haag), дочь мелкого чиновника, делопроизводителя в казённой палате в Штутгарте.</Paragraph>
+                </FlowDocument>
+            </FlowDocumentScrollViewer>
+        </TabItem>
+
+        <TabItem Header="List">
+            <FlowDocumentScrollViewer IsSelectionEnabled="False">
+                <FlowDocument>
+                    <Paragraph FontWeight="Bold">Семья Герцена А.И.</Paragraph>
+                    <List>
+                        <ListItem>
+                            <Paragraph>
+                                Александр (1839—1906), известный физиолог, жил в Швейцарии.
+                            </Paragraph>
+                        </ListItem>
+                        <ListItem>
+                            <Paragraph>
+                                Наталья (р. и ум. 1841), умерла через 2 дня после рождения.
+                            </Paragraph>
+                        </ListItem>
+                    </List>
+                    <Paragraph>Память</Paragraph>
+                    <List MarkerStyle="Decimal" MarkerOffset="2">
+                        <ListItem>
+                            <Paragraph>
+                                Библиотека им. А. И. Герцена в г. Санкт-Петербург
+                            </Paragraph>
+                        </ListItem>
+                        <ListItem>
+                            <Paragraph>
+                                Библиотека им. Герцена А. И. в Омске
+                            </Paragraph>
+                        </ListItem>
+                    </List>
+                </FlowDocument>
+            </FlowDocumentScrollViewer>
+        </TabItem>
+
+        <TabItem Header="Table">
+            <FlowDocumentScrollViewer>
+                <FlowDocument>
+                    <Paragraph>Содержание</Paragraph>
+                    <Table><!--TABLE-->
+                            <!--<Table.Columns>
+                            <TableColumn Width=""></TableColumn>
+                            <TableColumn Width=""></TableColumn>
+                            <TableColumn Width=""></TableColumn>
+                        </Table.Columns>-->
+                        <TableRowGroup ><!-- TR-->
+                            <TableRow> <!-- TBODY-->
+                                <!-- TD-->
+                                <TableCell BorderBrush="Black" BorderThickness="1">
+                                    <Paragraph># п.п.</Paragraph>
+                                </TableCell>
+                                <TableCell  BorderBrush="Black" BorderThickness="1">
+                                    <Paragraph>Наименование</Paragraph>
+                                </TableCell>
+                                <TableCell  BorderBrush="Black" BorderThickness="1">
+                                    <Paragraph>Ссылка</Paragraph>
+                                </TableCell>
+                            </TableRow>
+
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>1</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>Биография</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph TextDecorations="Underline" Foreground="Blue">https://ru.wikipedia.org/wiki</Paragraph>
+                                </TableCell>
+                            </TableRow>
+
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>1.1.</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>Детство</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph TextDecorations="Underline" Foreground="Blue">https://ru.wikipedia.org/wiki</Paragraph>
+                                </TableCell>
+                            </TableRow>
+
+                            <TableRow>
+                                <TableCell>
+                                    <Paragraph>1.2.</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph>Университет (1829−1833 гг.)</Paragraph>
+                                </TableCell>
+                                <TableCell>
+                                    <Paragraph TextDecorations="Underline" Foreground="Blue">https://ru.wikipedia.org/wiki</Paragraph>
+                                </TableCell>
+                            </TableRow>
+
+                            <TableRow>
+                                <TableCell  BorderBrush="Black" BorderThickness="1" ColumnSpan="3"></TableCell>
+                            </TableRow>
+                        </TableRowGroup>
+                    </Table>
+                </FlowDocument>
+            </FlowDocumentScrollViewer>
+
+        </TabItem>
+
+        <TabItem Header="Section">
+            <FlowDocumentScrollViewer Name="SectionDocument">
+                <FlowDocument >
+                    <Section FontFamily="Palation" Background="LightYellow" Padding="25" Margin="5">
+                        <Paragraph FontWeight="Bold">Университет (1829−1833 гг.)</Paragraph>
+                        <Paragraph>
+                            Герцен грезил дружбой, мечтал о борьбе и страданиях за свободу. В таком настроении Герцен поступил в Московский университет на физико-математическое отделение, и здесь это настроение ещё более усилилось.</Paragraph>
+                        <Paragraph>В университете Герцен принимал участие в так называемой «маловской истории» (протест студентов против нелюбимого преподавателя), но отделался сравнительно легко — недолгим заключением, вместе со многими товарищами, в карцере.</Paragraph>
+                        <Paragraph>Из преподавателей только М.Т. Каченовский своим скептицизмом и М.Г. Павлов, на лекциях сельского хозяйства знакомивший слушателей с немецкой философией, будили молодую мысль</Paragraph>
+                    </Section>
+
+                    <BlockUIContainer>
+                        <Button Content="Print" Command="ApplicationCommands.Print" ></Button>
+                    </BlockUIContainer>
+                </FlowDocument>
+            </FlowDocumentScrollViewer>
+        </TabItem>
+
+        <TabItem Header="BlocUICotainer">
+            <FlowDocumentScrollViewer>
+                <FlowDocument>
+                    <Paragraph FontWeight="Bold">В эмиграции</Paragraph>
+                    <Paragraph>В Европу Герцен приехал, настроенный скорее радикально-республикански, чем социалистически, хотя начатая им публикация в «Отечественных записках» серии статей под заглавием «Письма с Avenue Marigny» (впоследствии в переработанном виде опубликованы в «Письмах из Франции и Италии») шокировала его друзей — либералов-западников — своим антибуржуазным пафосом.</Paragraph>
+                    <BlockUIContainer>
+                        <Button Width="200" HorizontalAlignment="Left">[правитьвики-текст]</Button>
+                    </BlockUIContainer>
+                </FlowDocument>
+            </FlowDocumentScrollViewer>
+        </TabItem>
+
+        <TabItem Header="Floater">
+            <FlowDocumentScrollViewer>
+                <FlowDocument IsOptimalParagraphEnabled="True" IsHyphenationEnabled="True">
+                    <Paragraph>
+                        Русское племя — свежее девственное племя, у которого есть «чаянье будущего века», неизмеримый и непочатой запас жизненных сил и энергий;
+                        <Run xml:space="preserve"> </Run>
+                        <Floater Style="{StaticResource PullQuote}" 
+                                 Width="250" 
+                                 HorizontalAlignment="Left">
+                            <Paragraph>
+                                «мыслящий человек в России — самый независимый и самый непредубеждённый человек в свете»
+                            </Paragraph>
+                        </Floater>
+                    </Paragraph>
+                    <Paragraph>Герцен был убеждён, что славянский мир стремится к единству, и так как «централизация противна славянскому духу», то славянство объединится на принципах федераций. Относясь свободомысленно ко всем религиям, Герцен признавал, однако, за православием многие преимущества и достоинства по сравнению с католицизмом и протестантством</Paragraph>
+                    <Paragraph>Как последовательный гегельянец, Герцен верил, что развитие человечества идёт ступенями, и каждая ступень воплощается в известном народе. Герцен, смеявшийся над тем, что гегелевский бог живёт в Берлине, в сущности перенёс этого бога в Москву, разделяя со славянофилами веру в грядущую смену германского периода славянским.</Paragraph>
+
+
+                    <Paragraph Margin="0,30,0,0" FontWeight="Bold">Литературная и публицистическая деятельность</Paragraph>
+
+                    <Paragraph>
+                        Литературная деятельность Герцена началась ещё в 1830-х годах. В «Атенее» за 1831 год (II т.) его имя встречается под одним переводом с французского. Первая статья, подписанная псевдонимом Искандер, была напечатана в «Телескопе» за 1836 год («Гофман»).
+                        <Floater Width="150" Padding="5,0,5,0" HorizontalAlignment="Right">
+                            <BlockUIContainer>
+                                <Image Source="/img/220px-Alexander_Herzen_by_Vallotton.jpg"></Image>
+                            </BlockUIContainer>
+                            <Paragraph FontStyle="Italic" FontSize="10">Феликс Валлоттон. Портрет Герцена, 1895</Paragraph>
+                        </Floater>
+                        К тому же времени относится «Речь, сказанная при открытии вятской публичной библиотеки» и «Дневник» (1842).
+                        С 1842 по 1847 год помещает в «Отечественных записках» и «Современнике» статьи: «Дилетантизм в науке», «Дилетанты-романтики», «Цех учёных», «Буддизм в науке», «Письма об изучении природы». Здесь Герцен восставал против учёных педантов и формалистов, против их схоластической науки, отчуждённой от жизни, против их квиетизма. В статье «Об изучении природы» мы находим философский анализ различных методов знания. Тогда же Герценом написаны: «По поводу одной драмы», «По разным поводам», «Новые вариации на старые темы», «Несколько замечаний об историческом развитии чести», «Из записок доктора Крупова», «Кто виноват?», «Сорока-воровка», «Москва и Петербург», «Новгород и Владимир», «Станция Едрово», «Прерванные разговоры». Из всех этих произведений особенно выделяются повесть «Сорока-воровка», в которой изображёно ужасное положение «крепостной интеллигенции», и роман «Кто виноват?», посвящённый вопросу о свободе чувства, семейных отношениях, положении женщины в браке. Основная мысль романа заключается в том, что люди, основывающие своё благополучие исключительно на почве семейного счастья и чувства, чуждые интересов общественных и общечеловеческих, не могут обеспечить себе прочного счастья, и оно в их жизни всегда будет зависеть от случая.
+                    </Paragraph>
+                </FlowDocument>
+            </FlowDocumentScrollViewer>
+
+        </TabItem>
+
+        <TabItem Header="Figure" Name="SoftwareInteraction">
+            <FlowDocumentScrollViewer Name="DocViewer">
+
+            </FlowDocumentScrollViewer>
+        </TabItem>
+
+        <TabItem Header="PageViewer">
+            <FlowDocumentPageViewer>
+                <FlowDocument>
+                    <Paragraph FontWeight="Bold"></Paragraph>
+                    <Paragraph>Герцен страстно добивался распространения просвещения и знаний среди народа, призывал учёных вывести науку из стен кабинетов, сделать её достижения всеобщим достоянием. Подчёркивая огромное воспитательное и образовательное значение естественных наук, Герцен был в то же время за систему всестороннего общего образования. Он хотел, чтобы учащиеся общеобразовательной школы наряду с естествознанием и математикой изучали литературу (в том числе и литературу античных народов), иностранные языки, историю. А. И. Герцен отмечал, что без чтения нет и не может быть ни вкуса, ни стиля, ни многосторонней шири понимания. Благодаря чтению, человек переживает века. Книги оказывают влияние на глубинные сферы человеческой психики.[14] Герцен всемерно подчёркивал, что образование должно способствовать развитию у учащихся самостоятельного мышления. Воспитателям следует, опираясь на врождённые склонности детей к общению, развивать в них общественные стремления и наклонности. Этому служат общение со сверстниками, коллективные детские игры, общие занятия. Герцен боролся против подавления детской воли, но в то же время придавал большое значение дисциплине, считал установление дисциплины необходимым условием правильного воспитания. «Без дисциплины, — говорил он, — нет ни спокойной уверенности, ни повиновения, ни способа оградить здоровье и предупредить опасность».</Paragraph>
+                    <Paragraph>Герцен написал два специальных произведения, в которых объяснял подрастающему поколению явления природы: «Опыт бесед с молодыми людьми» и «Разговоры с детьми». Эти произведения являются замечательными образцами талантливого, популярного изложения сложных мировоззренческих проблем. Автор просто и живо разъясняет детям с материалистических позиций происхождение Вселенной. Он убедительно доказывает важную роль науки в борьбе с неправильными взглядами, предрассудками и суеверием и опровергает идеалистическое измышление о том, что в человеке отдельно от его тела существует ещё и душа.[15]</Paragraph>
+
+                    <Paragraph FontWeight="Bold">Воспитание</Paragraph>
+                    <Paragraph>Главной задачей воспитания Герцен считал формирование гуманной, свободной личности, которая живёт интересами своего народа и стремится к преобразованию общества на разумных началах. Детям должны быть предоставлены условия для свободного развития. «Разумное признание своеволия есть высшее и нравственное признание человеческого достоинства». В повседневной воспитательной деятельности важную роль играет «талант терпеливой любви», расположение воспитателя к ребёнку, уважение к нему, знание его потребностей. Здоровая семейная обстановка и правильные отношения между детьми и воспитателями являются необходимым условием нравственного воспитания.</Paragraph>
+
+
+                    <Paragraph FontWeight="Bold">Народная педагогика</Paragraph>
+                    <Paragraph>Герцен считал, что самое положительное влияние на детей оказывает простой народ, что именно народ является носителем лучших русских национальных качеств. У народа молодые поколения учатся уважению к труду, бескорыстной любви к родине, отвращению к праздности.</Paragraph>
+
+
+                    <Paragraph FontWeight="Bold">Критика системы образования при Николае I</Paragraph>
+                    <Paragraph>Герцен показал опасность авторитарного воспитания в России его времени. Он резко критиковал систему образования и отношение к образованию Николая I.</Paragraph>
+                    <Paragraph>Герцен назвал царствование Николая I тридцатилетним гонением на школы и университеты и показал, как николаевское министерство просвещения душило народное образование. Царское правительство, по словам Герцена, «подстерегало ребёнка при первом шаге в жизни и развращало кадета-дитя, гимназиста-отрока, студента-юношу. Беспощадно, систематически вытравляло оно в них человеческие зародыши, отучало их, как от порока, от всех людских чувств, кроме покорности. За нарушение дисциплины оно малолетних наказывало так, как не наказывают в других странах закоренелых преступников».</Paragraph>
+                    <Paragraph>Он решительно выступал против внедрения религии в воспитание, против превращения школ и университетов в орудие укрепления крепостничества и самодержавия.</Paragraph>
+
+                </FlowDocument>
+            </FlowDocumentPageViewer>
+        </TabItem>
+
+        <TabItem Header="XmlLoad">
+            <FlowDocumentScrollViewer Name="FlowDocumentConainer">
+            </FlowDocumentScrollViewer>
+        </TabItem>
+
+        <TabItem Header="RichTextBox">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                </Grid.RowDefinitions>
+                
+                <RichTextBox Grid.Row="0" Grid.Column="0" Name="MyRichTextBox">
+                    <FlowDocument>
+                        <Paragraph FontWeight="Bold">Цитаты</Paragraph>
+                        <Paragraph>«Не будем выдумывать бога, если его нет, — от этого его всё же не будет».</Paragraph>
+                        <Paragraph>«Во всяком возрасте и при различных обстоятельствах я возвращался к чтению Евангелия, и всякий раз его содержание низводило мир и кротость в душу».</Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+                
+                <Grid Grid.Row="1" Grid.Column="0">
+                    <Button HorizontalAlignment="Left" Content="Load Dcument" Click="Button_Click" Width="150" Height="25"></Button>
+                    <Button HorizontalAlignment="Center" Content="Save Dcument" Click="Button_Click_1" Width="150" Height="25"></Button>
+                </Grid>
+
+            </Grid>
+        </TabItem>
+    </TabControl>
+
+
+
+</Window>
